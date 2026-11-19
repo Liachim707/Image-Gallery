@@ -1,0 +1,134 @@
+/* Общие стили */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Заголовок */
+h1 {
+  background-color: #3e7130;
+  color: white;
+  font-size: 28px;
+  margin: 0;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Основной контейнер */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+/* Большое изображение */
+.preview {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.preview img {
+  display: block;
+  width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+  background-color: #222;
+  border-radius: 10px;
+}
+
+/* Имя автора */
+.author {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Галерея миниатюр */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Кнопки с миниатюрами */
+.thumbnail {
+  width: calc(25% - 10px);
+  padding: 3px;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Выбранная миниатюра */
+.thumbnail.selected {
+  border-color: #3e7130;
+}
+
+/* Наведение на миниатюру */
+.thumbnail:hover {
+  border-color: #80a875;
+}
+
+/* Кнопки управления */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  background-color: #c45b50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:hover:not(:disabled) {
+  background-color: #3e7130;
+}
+
+.controls button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Сообщение о состоянии */
+.status {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 359px) {
+  .thumbnail {
+    width: calc(50% - 10px);
+  }
+
+  .thumbnail img {
+    height: 90px;
+  }
+
+  .preview img {
+    max-height: 300px;
+  }
+}
